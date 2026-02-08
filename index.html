@@ -73,7 +73,10 @@
             <div class="hero__cta">
                 <a class="btn btn--primary" href="#cursos">Ver cursos</a>
                 <a class="btn btn--ghost" href="#shows">
-                    <span class="icon-play" aria-hidden="true"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                    </svg>
                     Ver shows
                 </a>
             </div>
@@ -248,40 +251,170 @@
     <section class="section section--light" id="agenda">
         <div class="container">
             <div class="section__head">
-                <h2 class="section__title">AGENDA <span>DE LA SEMANA</span></h2>
+                <h2 class="section__title section__title--white">AGENDA <span>DE LA SEMANA</span></h2>
                 <p class="section__sub">
                     Horarios de referencia. Pedí el cronograma actualizado por WhatsApp.
                 </p>
             </div>
 
-            <div class="schedule">
-                <div class="schedule__row">
-                    <div class="schedule__day">Lunes</div>
-                    <div class="schedule__items">
-                        <span class="badge">19:00 Urbano (Inicial)</span>
-                        <span class="badge">20:15 Performance (Intermedio)</span>
+            <div class="agenda">
+                <div class="agenda__top">
+                    <div class="agendaTabs" role="tablist" aria-label="Agenda por día">
+                        <button class="agendaTab is-active" role="tab" aria-selected="true" data-day="lunes">Lun</button>
+                        <button class="agendaTab" role="tab" aria-selected="false" data-day="miercoles">Mié</button>
+                        <button class="agendaTab" role="tab" aria-selected="false" data-day="viernes">Vie</button>
+                        <button class="agendaTab" role="tab" aria-selected="false" data-day="sabado">Sáb</button>
+                    </div>
+
+                    <div class="agendaLegend" aria-label="Leyenda">
+                        <span class="tag tag--course">Curso</span>
+                        <span class="tag tag--show">Ensayo</span>
+                        <span class="tag tag--workshop">Taller</span>
                     </div>
                 </div>
-                <div class="schedule__row">
-                    <div class="schedule__day">Miércoles</div>
-                    <div class="schedule__items">
-                        <span class="badge">19:00 Ritmos Latinos</span>
-                        <span class="badge">20:15 Contemporáneo</span>
+
+                <!-- Panels -->
+                <div class="agendaPanels">
+                    <!-- LUNES -->
+                    <div class="agendaPanel is-active" data-panel="lunes" role="tabpanel">
+                        <article class="slot">
+                            <div class="slot__time">19:00</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Urbano (Inicial)</h3>
+                                    <span class="tag tag--course">Curso</span>
+                                </div>
+                                <p class="slot__meta">Duración: 75 min · Cupos: 12 · Nivel: Inicial</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
+
+                        <article class="slot">
+                            <div class="slot__time">20:15</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Performance (Intermedio)</h3>
+                                    <span class="tag tag--show">Ensayo</span>
+                                </div>
+                                <p class="slot__meta">Duración: 75 min · Cupos: 10 · Enfoque: Escena</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
+                    </div>
+
+                    <!-- MIÉRCOLES -->
+                    <div class="agendaPanel" data-panel="miercoles" role="tabpanel">
+                        <article class="slot">
+                            <div class="slot__time">19:00</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Ritmos Latinos</h3>
+                                    <span class="tag tag--course">Curso</span>
+                                </div>
+                                <p class="slot__meta">Duración: 70 min · Cupos: 14 · Salsa / Bachata</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
+
+                        <article class="slot">
+                            <div class="slot__time">20:15</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Contemporáneo</h3>
+                                    <span class="tag tag--course">Curso</span>
+                                </div>
+                                <p class="slot__meta">Duración: 75 min · Cupos: 12 · Técnica + expresión</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
+                    </div>
+
+                    <!-- VIERNES -->
+                    <div class="agendaPanel" data-panel="viernes" role="tabpanel">
+                        <article class="slot">
+                            <div class="slot__time">19:30</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Urbano (Avanzado)</h3>
+                                    <span class="tag tag--course">Curso</span>
+                                </div>
+                                <p class="slot__meta">Duración: 75 min · Cupos: 10 · Coreografía + musicalidad</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
+
+                        <article class="slot">
+                            <div class="slot__time">21:00</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Ensayo Show</h3>
+                                    <span class="tag tag--show">Ensayo</span>
+                                </div>
+                                <p class="slot__meta">Duración: 90 min · Cupos: 12 · Montaje escénico</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
+                    </div>
+
+                    <!-- SÁBADO -->
+                    <div class="agendaPanel" data-panel="sabado" role="tabpanel">
+                        <article class="slot">
+                            <div class="slot__time">11:00</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Taller Intensivo</h3>
+                                    <span class="tag tag--workshop">Taller</span>
+                                </div>
+                                <p class="slot__meta">Duración: 120 min · Cupos: 18 · Técnica + combo coreo</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
+
+                        <article class="slot">
+                            <div class="slot__time">18:00</div>
+                            <div class="slot__body">
+                                <div class="slot__titleRow">
+                                    <h3 class="slot__title">Clase Abierta</h3>
+                                    <span class="tag tag--course">Curso</span>
+                                </div>
+                                <p class="slot__meta">Duración: 75 min · Cupos: 20 · Para probar sin presión</p>
+                            </div>
+<!--                            <a class="slot__cta" target="_blank" rel="noreferrer"-->
+<!--                               href="#" data-social="whatsapp">-->
+<!--                                Reservar-->
+<!--                            </a>-->
+                        </article>
                     </div>
                 </div>
-                <div class="schedule__row">
-                    <div class="schedule__day">Viernes</div>
-                    <div class="schedule__items">
-                        <span class="badge">19:30 Urbano (Avanzado)</span>
-                        <span class="badge">21:00 Ensayo Show</span>
-                    </div>
-                </div>
-                <div class="schedule__row">
-                    <div class="schedule__day">Sábado</div>
-                    <div class="schedule__items">
-                        <span class="badge">11:00 Taller intensivo</span>
-                        <span class="badge">18:00 Clase abierta</span>
-                    </div>
+
+                <div class="agenda__bottom">
+                    <p class="agendaNote">
+                        *Horarios referenciales. Para agenda actualizada y cupos disponibles, escribinos por WhatsApp.
+                    </p>
+                    <a class="btn btn--primary" href="#" data-social="whatsapp" target="_blank" rel="noreferrer">
+                        Ver agenda actualizada
+                    </a>
                 </div>
             </div>
         </div>
@@ -338,38 +471,54 @@
     </section>
 
     <!-- Instagram / Social -->
-    <section class="section section--light" id="instagram">
+    <section class="section section--light instagramPlus" id="instagram">
         <div class="container">
             <div class="section__head section__head--split">
                 <div>
-                    <h2 class="section__title">SEGUINOS <span>EN REDES</span></h2>
-                    <p class="section__sub">Clips, ensayos, backstage y anuncios de shows.</p>
+                    <h2 class="section__title section__title--white">
+                        SEGUINOS <span>EN INSTAGRAM</span>
+                    </h2>
+                    <p class="section__sub">
+                        Shows, ensayos, backstage y momentos reales de nuestra comunidad.
+                    </p>
                 </div>
 
-                <div class="socialRow" aria-label="Redes sociales">
-                    <a class="socialBtn" href="https://wa.me/59100000000" target="_blank" rel="noreferrer"
-                       aria-label="WhatsApp">
-                        <span class="ico ico--wa" aria-hidden="true"></span>
-                    </a>
-                    <a class="socialBtn" href="#" target="_blank" rel="noreferrer" aria-label="Instagram">
-                        <span class="ico ico--ig" aria-hidden="true"></span>
-                    </a>
-                    <a class="socialBtn" href="#" target="_blank" rel="noreferrer" aria-label="Facebook">
-                        <span class="ico ico--fb" aria-hidden="true"></span>
-                    </a>
-                    <a class="socialBtn" href="#" target="_blank" rel="noreferrer" aria-label="TikTok">
-                        <span class="ico ico--tt" aria-hidden="true"></span>
-                    </a>
-                </div>
+                <a
+                        class="btn btn--primary"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                >
+                    @dreimusicales
+                </a>
             </div>
 
-            <div class="igGrid" aria-label="Galería estilo Instagram">
-                <a class="ig" href="#" aria-label="Post 1"><span class="ig__icon" aria-hidden="true"></span></a>
-                <a class="ig ig--2" href="#" aria-label="Post 2"><span class="ig__icon" aria-hidden="true"></span></a>
-                <a class="ig ig--3" href="#" aria-label="Post 3"><span class="ig__icon" aria-hidden="true"></span></a>
-                <a class="ig ig--4" href="#" aria-label="Post 4"><span class="ig__icon" aria-hidden="true"></span></a>
-                <a class="ig ig--5" href="#" aria-label="Post 5"><span class="ig__icon" aria-hidden="true"></span></a>
-                <a class="ig ig--6" href="#" aria-label="Post 6"><span class="ig__icon" aria-hidden="true"></span></a>
+            <!-- Instagram grid enhanced -->
+            <div class="igMasonry">
+                <a class="igCard igCard--tall" href="#" aria-label="Instagram reel">
+                    <span class="igPlay"></span>
+                    <span class="igLabel">Reel · Show en vivo</span>
+                </a>
+
+                <a class="igCard" href="#">
+                    <span class="igPlay"></span>
+                    <span class="igLabel">Ensayo</span>
+                </a>
+
+                <a class="igCard" href="#">
+                    <span class="igPlay"></span>
+                    <span class="igLabel">Clase urbana</span>
+                </a>
+
+                <a class="igCard igCard--wide" href="#">
+                    <span class="igPlay"></span>
+                    <span class="igLabel">Backstage</span>
+                </a>
+
+                <a class="igCard" href="#">
+                    <span class="igPlay"></span>
+                    <span class="igLabel">Ritmos latinos</span>
+                </a>
             </div>
         </div>
     </section>
@@ -388,7 +537,7 @@
                     <div class="contact__mini">
                         <div class="mini">
                             <span class="mini__label">Dirección</span>
-                            <span class="mini__value">Tu dirección aquí, Ciudad</span>
+                            <span class="mini__value">C. Atacama y Av. Tadeo Haenke 1223, Cochabamba</span>
                         </div>
                         <div class="mini">
                             <span class="mini__label">Horario</span>
@@ -396,60 +545,29 @@
                         </div>
                         <div class="mini">
                             <span class="mini__label">WhatsApp</span>
-                            <a class="mini__value link link--light" href="https://wa.me/59100000000" target="_blank"
+                            <a class="mini__value link link--light" href="https://wa.me/59177200451" target="_blank"
                                rel="noreferrer">
-                                +591 000 00000
+                                +591 77200451
                             </a>
                         </div>
                     </div>
 
                     <div class="contact__actions">
-                        <a class="btn btn--primary" href="https://wa.me/59100000000" target="_blank" rel="noreferrer">
+                        <a class="btn btn--primary" href="https://wa.me/59177200451" target="_blank" rel="noreferrer">
                             Escribir por WhatsApp
                         </a>
                         <a class="btn btn--ghost btn--ghostLight" href="#agenda">Ver horarios</a>
                     </div>
                 </div>
 
-                <form class="form" onsubmit="return false" aria-label="Formulario de contacto">
-                    <div class="form__row">
-                        <label>
-                            <span>Nombre</span>
-                            <input type="text" placeholder="Tu nombre" required/>
-                        </label>
-                        <label>
-                            <span>Teléfono</span>
-                            <input type="tel" placeholder="+591 ..."/>
-                        </label>
-                    </div>
-
-                    <label>
-                        <span>Email</span>
-                        <input type="email" placeholder="tucorreo@ejemplo.com" required/>
-                    </label>
-
-                    <label>
-                        <span>¿Qué te interesa?</span>
-                        <select>
-                            <option>Cursos</option>
-                            <option>Shows / Contrataciones</option>
-                            <option>Taller intensivo</option>
-                            <option>Otro</option>
-                        </select>
-                    </label>
-
-                    <label>
-                        <span>Mensaje</span>
-                        <textarea rows="5"
-                                  placeholder="Contanos qué buscás (curso, nivel, fecha del evento, etc.)"></textarea>
-                    </label>
-
-                    <button class="btn btn--primary btn--full" type="submit">Enviar mensaje</button>
-
-                    <p class="form__hint">
-                        *Este formulario es visual (landing). Conectalo luego a tu backend, Google Forms o WhatsApp.
-                    </p>
-                </form>
+                <div class="mapWrapper" aria-label="Ubicación Casa DREI Cultural">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1903.8005712624918!2d-66.179146!3d-17.3829154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e3752d4fb1fae3%3A0xfd7102584fceb91e!2sCasa%20DREI%20Cultural!5e0!3m2!1sen!2sbo!4v1770582657496!5m2!1sen!2sbo"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -472,34 +590,34 @@
                 <a href="#shows">Shows</a>
                 <a href="#cursos">Cursos</a>
                 <a href="#agenda">Agenda</a>
-                <a href="#contacto">Contacto</a>
+<!--                <a href="#contacto">Contacto</a>-->
             </div>
 
             <div>
                 <h4>Redes</h4>
-                <a href="https://wa.me/59100000000" target="_blank" rel="noreferrer">WhatsApp</a>
-                <a href="#" target="_blank" rel="noreferrer">Instagram</a>
-                <a href="#" target="_blank" rel="noreferrer">Facebook</a>
-                <a href="#" target="_blank" rel="noreferrer">TikTok</a>
+                <a href="https://wa.me/59177200451" target="_blank" rel="noreferrer">WhatsApp</a>
+                <a href="#" target="_blank" rel="noreferrer" data-social="instagram">Instagram</a>
+                <a href="#" target="_blank" rel="noreferrer" data-social="facebook">Facebook</a>
+                <a href="#" target="_blank" rel="noreferrer" data-social="tiktok">TikTok</a>
             </div>
 
             <div>
                 <h4>Contacto</h4>
-                <p>Tu dirección aquí</p>
-                <p>+591 000 00000</p>
-                <p>hola@dreimusicales.com</p>
+                <p>C. Atacama y Av. Tadeo Haenke 1223, Cochabamba</p>
+                <p>+591 77200451</p>
+                <p>dreimusicales@gmail.com</p>
             </div>
         </div>
     </div>
 
     <div class="container footer__bottom">
         <small>© <span id="year"></span> DREI musicales. Todos los derechos reservados.</small>
-        <small class="muted">Hecho para una landing moderna y responsive.</small>
+<!--        <small class="muted">Hecho para una landing moderna y responsive.</small>-->
     </div>
 </footer>
 
 <!-- Floating WhatsApp -->
-<a class="fab fab--wa" href="https://wa.me/59100000000" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+<a class="fab fab--wa" href="https://wa.me/59177200451" target="_blank" rel="noreferrer" aria-label="WhatsApp">
     <span class="fab__icon" aria-hidden="true"></span>
 </a>
 
